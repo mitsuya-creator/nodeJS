@@ -1,10 +1,5 @@
-import { Person, Professor, Mhs } from './module/inheritclass.js';
+import myCallback from './module/callback.js';
 
-const andreas = new Person('Andreas','Yan');
-console.log(andreas.fullName());
+const score = myCallback([3,4,6,1,2,78,1,22,5], x => x > 10);
 
-const liliana = new Professor('Liliana','Zuckermark',32786);
-console.log(liliana.fullName());
-
-const mitsuya = new Mhs('Mitsuya','Takashi',110701);
-console.log(mitsuya.fullName());
+console.log(score);
