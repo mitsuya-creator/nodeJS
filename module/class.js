@@ -19,6 +19,4 @@ class Mhs {
     return `${diffY} years ${diffM} Months ${diffD} Days`;
   }
 }
-
-
 export default Mhs;
