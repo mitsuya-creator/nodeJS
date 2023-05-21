@@ -1,29 +1,27 @@
-class Mhs {
-  constructor(firstName){
-    this._firstName = firstName ;
-  }
-  get getfirstName(){
-    return this._firstName;
-  }
-  set cfirstName(x) {
-    this._firstName = x;
-  }
-}
-
-class Details extends Mhs{
+class Person {
   constructor(firstName,lastName){
-    super(firstName);
+    this.firstName = firstName;
     this.lastName = lastName;
   }
-  fullName() {
-    return `${this._firstName} ${this.lastName}`;
+  fullName(){
+    return `${this.firstName} ${this.lastName}`;
   }
 }
 
-const hina = {
-  _firstName : 'hina',
-  lastName : 'tachibana'
+class Professor extends Person {
+  constructor(firstName,lastName,nip){
+    super(firstName,lastName);
+    this.nip = nip;
+  }
+}
+
+class Mhs extends Person {
+  constructor(firstName,lastName,nim){
+    super(firstName,lastName);
+    this.nim = nim;
+  }
 }
 
 
-export { Mhs, Details, hina };
+
+export { Person, Professor, Mhs };

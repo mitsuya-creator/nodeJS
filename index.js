@@ -1,17 +1,10 @@
-import { Mhs, Details, hina } from './module/inheritclass.js';
+import { Person, Professor, Mhs } from './module/inheritclass.js';
 
-const mitsuya = new Mhs('mitsuya');
-console.log(mitsuya);
-mitsuya.cfirstName = 'riuzy';
-console.log(mitsuya);
-console.log(mitsuya.getfirstName);
+const andreas = new Person('Andreas','Yan');
+console.log(andreas.fullName());
 
-const mitsuya1 = new Details('mitsuya','takashi')
-console.log(mitsuya1.fullName());
+const liliana = new Professor('Liliana','Zuckermark',32786);
+console.log(liliana.fullName());
 
-
-console.log(hina);
-console.log(mitsuya1.fullName.call(hina));
-
-//console.log(`name: ${mitsuya.name}`);
-//console.log(`age: ${mitsuya.age()}`);
+const mitsuya = new Mhs('Mitsuya','Takashi',110701);
+console.log(mitsuya.fullName());
