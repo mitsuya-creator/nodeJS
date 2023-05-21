@@ -1,9 +1,5 @@
-import { Mhs, person } from './module/function.js';
+import Mhs from './module/class.js';
 
-const mitsuya = new Mhs('Mitsuya','Takashi','EN');
-const draken = new Mhs('Ryuzi','Draken','EN');
-
-console.log(mitsuya);
-console.log(person.fullName.call(mitsuya));
-console.log(draken);
-console.log(person.fullName.call(draken));
+const mitsuya = new Mhs('mitsuya','2001-07-11');
+console.log(`name: ${mitsuya.name}`);
+console.log(`age: ${mitsuya.age()}`);
