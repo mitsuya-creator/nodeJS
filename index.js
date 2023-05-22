@@ -1,13 +1,27 @@
-<<<<<<< HEAD
-import Mhs from './module/class.js';
+import { Store, Customer } from "./module/market.js";
+import resultTx from "./module/resulttx.js";
 
-const mitsuya = new Mhs('mitsuya', '2001-07-11');
-console.log(mitsuya);
-console.log(mitsuya.age());
-=======
-import myCallback from './module/callback.js';
+let order = (fromStore, items) => {
+    try {
+        const order = resultTx(fromStore, items);
+        order.then(res => console.log(res))
+            .catch(res => console.log(res));
+    } catch (e) {
+        console.log(e);
+    }
 
-const score = myCallback([3,4,6,1,2,78,1,22,5], x => x > 10);
+};
 
-console.log(score);
->>>>>>> 0f77a61ed0349da69bab7d6f7f9b3b3ebc3bf79d
+const rzkyStore = new Store('Rzkystore', 'SHD');
+const productRzky = rzkyStore.product('nabati', 'kopiko', 'vegetable', 'coffee', 'mizone');
+
+const mitsuya = new Customer('mitsuya', 'kopiko');
+const draken = new Customer('draken', 'vege');
+
+order(productRzky, draken.order);
+order(productRzky, mitsuya.order);
+
+
+
+
+
